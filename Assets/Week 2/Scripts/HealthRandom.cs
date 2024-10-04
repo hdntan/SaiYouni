@@ -23,8 +23,9 @@ public class HealthRandom : MonoBehaviour
     }
 
     //----------------------Edit below here --------------------
-    public void RandomHealth()
+    public int RandomHealth()
     {
-
+        int newHp = Random.Range(this.minHealth, this.maxHealth + 1);
+       return newHp;
     }
 }
