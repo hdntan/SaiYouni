@@ -21,14 +21,13 @@ public class TowerRadar : MainBehaviourScript
 
     protected virtual void FixedUpdate()
     {
+        this.RemoveDeadEnemy();
         this.FindNearest();
     }
 
     protected virtual void OnTriggerEnter(Collider collider)     
     {
-        Targetable targetable = collider.GetComponent<Targetable>();
-        if(targetable == null) return;
-
+       
         EnemyCtrl enemy = collider.GetComponentInParent<EnemyCtrl>();
         if(enemy == null) return;
 
@@ -101,8 +100,21 @@ public class TowerRadar : MainBehaviourScript
         }
     }
 
-    public virtual EnemyCtrl GetNearest()
+    public virtual EnemyCtrl GetTarget()
     {
         return this.nearest;
+    }
+
+    protected virtual void RemoveDeadEnemy()
+    {
+        foreach (EnemyCtrl enemyCtrl in this.enemies)
+        {
+            if (enemyCtrl.EnemyDamageReceiver.IsDead())
+            {
+                if (enemyCtrl == this.nearest) this.nearest = null;
+                this.enemies.Remove(enemyCtrl);
+                return;
+            }
+        }
     }
 }

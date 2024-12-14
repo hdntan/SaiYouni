@@ -22,7 +22,6 @@ public abstract class DamgeSender : MainBehaviourScript
     protected virtual DamgeReceiver SendDamage(Collider collider)
     {
 
-        Debug.LogError(transform.parent.name + " ==> " + collider.transform.parent.name);
         DamgeReceiver dameReceiver = collider.GetComponent<DamgeReceiver>();
         if (dameReceiver == null) return null;
 

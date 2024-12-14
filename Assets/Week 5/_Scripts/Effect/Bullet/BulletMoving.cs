@@ -14,6 +14,6 @@ public class BulletMoving : MainBehaviourScript
 
     protected virtual void Moving()
     {
-        transform.parent.Translate(Vector3.forward * this.speed * Time.deltaTime);
+        transform.parent.Translate(this.speed * Time.deltaTime * Vector3.forward);
     }
 }

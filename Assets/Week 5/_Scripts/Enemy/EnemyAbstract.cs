@@ -6,6 +6,8 @@ public class EnemyAbstract : MainBehaviourScript
 {
 
     [SerializeField] protected EnemyCtrl enemyCtrl;
+
+
     
 
 

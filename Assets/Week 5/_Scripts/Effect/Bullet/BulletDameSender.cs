@@ -9,20 +9,23 @@ public class BulletDameSender : DamgeSender
 {
 
     [SerializeField] protected SphereCollider sphareCollider;
-    [SerializeField] protected EffectDespawn despawn;
+    [SerializeField] protected BulletCtrl ctrl;
+
 
 
     protected override void LoadComponents()
     {
         base.LoadComponents();
-        this.LoadEffectDespawn();
+        this.LoadBulletCtrl();
     }
 
-    protected virtual void LoadEffectDespawn()
+   
+
+    protected virtual void LoadBulletCtrl()
     {
-        if (this.despawn != null) return;
-        this.despawn = transform.GetComponentInChildren<EffectDespawn>();
-        Debug.Log(transform.name + ": LoadDespawn", gameObject);
+        if (this.ctrl != null) return;
+        this.ctrl = transform.GetComponentInParent<BulletCtrl>();
+        Debug.Log(transform.name + ": LoadBulletCtrl", gameObject);
     }
 
     protected override void LoadTriggerCollider()
@@ -40,7 +43,7 @@ public class BulletDameSender : DamgeSender
     {
         DamgeReceiver damgeReceiver =  base.SendDamage(collider);
         if (damgeReceiver == null) return null;
-        this.despawn.DoDespawn();
+        this.ctrl.Despawn.DoDespawn();
         return damgeReceiver;
     }
 }

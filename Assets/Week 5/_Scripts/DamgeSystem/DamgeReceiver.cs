@@ -16,12 +16,17 @@ public abstract class DamgeReceiver : MainBehaviourScript
        if(!isImmortal) this.currentHp -= damage;
         if(this.currentHp < 0) this.currentHp = 0;
         if(this.IsDead()) this.OnDead();
-        else this.OnHurt();
+        else this.OnHurt(); 
 
 
     }
 
-    protected virtual bool IsDead()
+    protected virtual void OnEnable()
+    {
+        this.Reborn();
+    }
+
+    public virtual bool IsDead()
     {
         return this.isDead = this.currentHp <= 0;
     }
@@ -30,5 +35,10 @@ public abstract class DamgeReceiver : MainBehaviourScript
 
 
     protected abstract void OnHurt();
+
+    protected virtual void Reborn()
+    {
+        this.currentHp = this.maxHp;
+    }
   
 }
