@@ -1,0 +1,22 @@
+using TMPro;
+using UnityEngine;
+using static UnityEngine.RuleTile.TilingRuleOutput;
+using UnityEngine.EventSystems;
+
+public abstract class TextAbstact : MainBehaviourScript
+{
+    [SerializeField] protected TextMeshProUGUI textPro;
+
+    protected override void LoadComponents()
+    {
+        base.LoadComponents();
+        this.LoadTextPro();
+    }
+
+    protected virtual void LoadTextPro()
+    {
+        if (this.textPro != null) return;
+        this.textPro = GetComponent<TextMeshProUGUI>();
+        Debug.Log(transform.name + ": LoadTextPro", gameObject);
+    }
+}
