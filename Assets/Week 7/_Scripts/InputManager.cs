@@ -19,6 +19,12 @@ public class InputManager : MainSingleton<InputManager>
 
     protected virtual void CheckAiming()
     {
+
+        //check inventory open
+        if (UIInventory.Instance.IsShow) {
+            this.isAiming = false;
+            return;
+                };
         this.isAiming = Input.GetMouseButton(1);
     }
 

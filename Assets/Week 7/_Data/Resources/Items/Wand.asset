@@ -17,3 +17,4 @@ MonoBehaviour:
   itemName: Wand
   isStackable: 0
   maxStack: 99
+  itemTexture: {fileID: 2800000, guid: b437742bfcb0cab4f90b044eebb8c49e, type: 3}

@@ -5,7 +5,7 @@ using UnityEngine;
 public class UIInventory : MainSingleton<UIInventory>
 {
     [SerializeField] protected bool isShow = true;
-    protected bool IsShow => isShow;
+    public bool IsShow => isShow;
 
     [SerializeField] protected Transform showHide;
 
