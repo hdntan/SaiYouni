@@ -2819,6 +2819,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50043789f3577224cbd0032932ca0c13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isActive: 1
+  playerInput: {fileID: 7389021498584178252}
 --- !u!1 &722092141
 GameObject:
   m_ObjectHideFlags: 0
@@ -4196,7 +4198,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isShow: 1
   showHide: {fileID: 81978885}
-  defaultItemInventoryUI: {fileID: 0}
 --- !u!4 &1015927559 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2862485193706960395, guid: c4153c9dfe9017148bccc8efb8756add, type: 3}

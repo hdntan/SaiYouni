@@ -17,12 +17,6 @@ public class CrosshairCtrl : MainBehaviourScript
         this.HotkeyToogleInventory();
     }
 
-    //protected override void Start()
-    //{
-    //    base.Start();
-    //    this.Show();
-    //}
-
     protected override void LoadComponents()
     {
         base.LoadComponents();

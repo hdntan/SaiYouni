@@ -12,4 +12,7 @@ public class PlayerInput : vThirdPersonInput
 
         if (cc != null) this.playerController.PlayerInit();
     }
+
+
+
 }
