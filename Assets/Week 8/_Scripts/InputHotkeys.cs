@@ -5,7 +5,14 @@ using UnityEngine;
 public class InputHotkeys : MainSingleton<InputHotkeys>
 {
     protected bool isToogleInventoryUI = false;
+
     public bool IsToogleInventoryUI => isToogleInventoryUI;
+
+    protected bool isToogleShopUI = false;
+
+    public bool IsToogleShopUI => isToogleShopUI;
+
+
 
     protected bool isToogleMusic = false;
     public bool IsToogleMusic => isToogleMusic;
@@ -19,11 +26,17 @@ public class InputHotkeys : MainSingleton<InputHotkeys>
         this.OpenInventory();
         this.ToogleMusic();
         this.ToogleSetting();
+        this.OpenShop();
     }
 
     protected virtual void OpenInventory()
     {
         this.isToogleInventoryUI = Input.GetKeyUp(KeyCode.I);
+    }
+
+    protected virtual void OpenShop()
+    {
+        this.isToogleShopUI = Input.GetKeyUp(KeyCode.S);
     }
 
     protected virtual void ToogleMusic()

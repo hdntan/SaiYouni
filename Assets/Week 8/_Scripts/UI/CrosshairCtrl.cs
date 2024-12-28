@@ -53,7 +53,7 @@ public class CrosshairCtrl : MainBehaviourScript
 
     protected virtual void HotkeyToogleInventory()
     {
-        if (UIInventory.Instance.IsShow) this.Hide();
+        if (UIInventory.Instance.IsShow || UIShop.Instance.IsShow) this.Hide();
         else this.Show();
            
     }

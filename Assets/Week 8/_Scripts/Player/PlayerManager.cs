@@ -42,7 +42,8 @@ public class PlayerManager : MainBehaviourScript
 
     protected virtual void EnableActivePlayerInput()
     {
-        if (UIInventory.Instance.IsShow) this.Hide();
+        if (UIInventory.Instance.IsShow || UIShop.Instance.IsShow) this.Hide();
+
         else this.Show();
     }
         
